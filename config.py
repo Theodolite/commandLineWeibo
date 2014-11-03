@@ -5,7 +5,6 @@ from ConfigParser import SafeConfigParser
 class ConfigHandle():
     def __init__(self, configFile):
         self.configFile = configFile or self._getConfigFile()
-        print self.configFile
         self.parser = SafeConfigParser()
         self._open()
 

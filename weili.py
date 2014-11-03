@@ -1,9 +1,9 @@
-# -*- encoding: utf8 -*-
+# -*- coding: utf-8 -*-
 
 import argparse
 from weiboAgent import WeiboAgent
 
-class Weine:
+class Weili(object):
     def __init__(self):
         self.weiboAgent = WeiboAgent()
         self.weiboAgent.authorize()
@@ -23,7 +23,7 @@ class Weine:
         if args["get"]:
             all_statuses = self.weiboAgent.get_home_statuses(args["get"])
             for index,value in enumerate(all_statuses['statuses']):
-                print index,value['text']
+                print index,value['text'].encode('utf-8')
 
         if args["post"]:
             if args["image"]:
@@ -32,5 +32,5 @@ class Weine:
                 self.weiboAgent.post_status_with_pic(args["post"], args["image"])
 
 if __name__ == "__main__":
-    weine = Weine()
-    weine.command_line_runner()
+    weili = Weili()
+    weili.command_line_runner()
