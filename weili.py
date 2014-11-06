@@ -26,7 +26,7 @@ class Weili(object):
                 print index,value['text'].encode('utf-8')
 
         if args["post"]:
-            if args["image"]:
+            if not args["image"]:
                 self.weiboAgent.post_status(args["post"])
             else:
                 self.weiboAgent.post_status_with_pic(args["post"], args["image"])
